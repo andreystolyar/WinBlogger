@@ -7,4 +7,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WinBlogger.DataAccess\WinBlogger.DataAccess.csproj" />
+    <ProjectReference Include="..\WinBlogger.Model\WinBlogger.Model.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBlogger", "WinBlogger\WinBlogger.csproj", "{2606756C-A84C-418A-B8D0-0C6F82CB6B98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBlogger.UI", "WinBlogger\WinBlogger.UI.csproj", "{2606756C-A84C-418A-B8D0-0C6F82CB6B98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBlogger.DataAccess", "WinBlogger.DataAccess\WinBlogger.DataAccess.csproj", "{CFD1D4F5-1BD6-4F5B-B150-FF926ED5938B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBlogger.Model", "WinBlogger.Model\WinBlogger.Model.csproj", "{CDC6ED7F-E702-42EF-8B2B-388C869F2295}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{2606756C-A84C-418A-B8D0-0C6F82CB6B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2606756C-A84C-418A-B8D0-0C6F82CB6B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2606756C-A84C-418A-B8D0-0C6F82CB6B98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD1D4F5-1BD6-4F5B-B150-FF926ED5938B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD1D4F5-1BD6-4F5B-B150-FF926ED5938B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD1D4F5-1BD6-4F5B-B150-FF926ED5938B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD1D4F5-1BD6-4F5B-B150-FF926ED5938B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC6ED7F-E702-42EF-8B2B-388C869F2295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC6ED7F-E702-42EF-8B2B-388C869F2295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC6ED7F-E702-42EF-8B2B-388C869F2295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC6ED7F-E702-42EF-8B2B-388C869F2295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
