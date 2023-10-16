@@ -1,5 +1,5 @@
 ﻿namespace WinBlogger.Model;
 
-public class Blog
+public class Blog : ModelBase
 {
 }
