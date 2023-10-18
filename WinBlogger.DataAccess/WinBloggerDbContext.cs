@@ -9,6 +9,7 @@ public class WinBloggerDbContext : DbContext
 	IConfigurationRoot? _configuration;
 
 	public DbSet<Blogger> Bloggers { get; set; }
+	public DbSet<Blog> Blogs { get; set; }
 
 	public WinBloggerDbContext() : base() { }
 
@@ -18,7 +19,6 @@ public class WinBloggerDbContext : DbContext
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	{
 		if (optionsBuilder.IsConfigured) return;
-
 
 		var builder = new ConfigurationBuilder()
 										.SetBasePath(Directory.GetCurrentDirectory())
@@ -34,6 +34,11 @@ public class WinBloggerDbContext : DbContext
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
-		base.OnModelCreating(modelBuilder);
-	}
+		/*
+		modelBuilder.Entity<Blog>()
+								.HasOne(a => a.Author)
+								.WithOne(a => a.Blog)
+                .HasForeignKey<Blogger>();
+		*/
+  }
 }
