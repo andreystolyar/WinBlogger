@@ -7,7 +7,7 @@ namespace WinBlogger.UI.ViewModel;
 public class MainViewModel : ViewModelBase
 {
 	IBloggerDataService _bloggerDataService;
-	Blogger _selectedAuthor;
+	Blogger? _selectedAuthor;
 
 	public MainViewModel(IBloggerDataService bloggerDataService)
 	{

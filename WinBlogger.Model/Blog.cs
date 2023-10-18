@@ -1,5 +1,11 @@
-﻿namespace WinBlogger.Model;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-public class Blog
+namespace WinBlogger.Model;
+
+public class Blog : ModelBase
 {
+  public Blogger Author { get; set; }
+
+  [ForeignKey(nameof(Blogger))]
+  public int BloggerId { get; set; }
 }
