@@ -12,4 +12,7 @@ public class Blogger : ModelBase
 	public string? FullName { get; set; }
 
 	public Blog? Blog { get; set; }
+
+	[StringLength(10)]
+	public string? Avatar { get; set; }
 }

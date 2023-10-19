@@ -30,7 +30,6 @@ public class MainViewModel : ViewModelBase
 	public Blogger SelectedAuthor
 	{
 		get { return _selectedAuthor; }
-
 		set
 		{
 			_selectedAuthor = value;

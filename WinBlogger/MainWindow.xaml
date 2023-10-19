@@ -37,7 +37,6 @@
 			         Text="{Binding SelectedAuthor.Nickname,
 			                        Mode=TwoWay,
 			                        UpdateSourceTrigger=PropertyChanged}" />
-
 			<Label Grid.Row="2"
 			       Margin="10,0"
 			       Content="Full Name" />

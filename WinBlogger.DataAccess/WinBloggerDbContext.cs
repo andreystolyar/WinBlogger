@@ -10,6 +10,8 @@ public class WinBloggerDbContext : DbContext
 
 	public DbSet<Blogger> Bloggers { get; set; }
 	public DbSet<Blog> Blogs { get; set; }
+	public DbSet<Post> Posts { get; set; }
+	public DbSet<Comment> Comments { get; set; }
 
 	public WinBloggerDbContext() : base() { }
 
@@ -34,11 +36,5 @@ public class WinBloggerDbContext : DbContext
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
-		/*
-		modelBuilder.Entity<Blog>()
-								.HasOne(a => a.Author)
-								.WithOne(a => a.Blog)
-                .HasForeignKey<Blogger>();
-		*/
   }
 }

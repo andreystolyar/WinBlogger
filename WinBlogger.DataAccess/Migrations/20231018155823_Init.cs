@@ -2,62 +2,61 @@
 
 #nullable disable
 
-namespace WinBlogger.DataAccess.Migrations
-{
-    /// <inheritdoc />
-    public partial class Init : Migration
-    {
-        /// <inheritdoc />
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.CreateTable(
-                name: "Bloggers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nickname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    FullName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Bloggers", x => x.Id);
-                });
+namespace WinBlogger.DataAccess.Migrations;
 
-            migrationBuilder.CreateTable(
-                name: "Blogs",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BloggerId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Blogs", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Blogs_Bloggers_BloggerId",
-                        column: x => x.BloggerId,
-                        principalTable: "Bloggers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
+  /// <inheritdoc />
+  public partial class Init : Migration
+  {
+      /// <inheritdoc />
+      protected override void Up(MigrationBuilder migrationBuilder)
+      {
+          migrationBuilder.CreateTable(
+              name: "Bloggers",
+              columns: table => new
+              {
+                  Id = table.Column<int>(type: "int", nullable: false)
+                      .Annotation("SqlServer:Identity", "1, 1"),
+                  Nickname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                  FullName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
+              },
+              constraints: table =>
+              {
+                  table.PrimaryKey("PK_Bloggers", x => x.Id);
+              });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Blogs_BloggerId",
-                table: "Blogs",
-                column: "BloggerId",
-                unique: true);
-        }
+          migrationBuilder.CreateTable(
+              name: "Blogs",
+              columns: table => new
+              {
+                  Id = table.Column<int>(type: "int", nullable: false)
+                      .Annotation("SqlServer:Identity", "1, 1"),
+                  BloggerId = table.Column<int>(type: "int", nullable: false)
+              },
+              constraints: table =>
+              {
+                  table.PrimaryKey("PK_Blogs", x => x.Id);
+                  table.ForeignKey(
+                      name: "FK_Blogs_Bloggers_BloggerId",
+                      column: x => x.BloggerId,
+                      principalTable: "Bloggers",
+                      principalColumn: "Id",
+                      onDelete: ReferentialAction.Cascade);
+              });
 
-        /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropTable(
-                name: "Blogs");
+          migrationBuilder.CreateIndex(
+              name: "IX_Blogs_BloggerId",
+              table: "Blogs",
+              column: "BloggerId",
+              unique: true);
+      }
 
-            migrationBuilder.DropTable(
-                name: "Bloggers");
-        }
-    }
-}
+      /// <inheritdoc />
+      protected override void Down(MigrationBuilder migrationBuilder)
+      {
+          migrationBuilder.DropTable(
+              name: "Blogs");
+
+          migrationBuilder.DropTable(
+              name: "Bloggers");
+      }
+  }

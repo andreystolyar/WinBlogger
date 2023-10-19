@@ -30,4 +30,8 @@
     <ProjectReference Include="..\WinBlogger.Model\WinBlogger.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\Avatars\" />
+  </ItemGroup>
+
 </Project>
