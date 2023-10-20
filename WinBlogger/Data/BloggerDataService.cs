@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using WinBlogger.DataAccess;
 using WinBlogger.Model;
 
 namespace WinBlogger.UI.Data;
@@ -7,9 +10,10 @@ public class BloggerDataService : IBloggerDataService
 {
 	public IEnumerable<Blogger> GetAll()
 	{
-		//todo: load data from a real database
+		using var db = new WinBloggerDbContext();
+		return db.Bloggers.AsNoTracking().ToList();
 
-		#region add temporary data
+		/*
 		yield return
 			new Blogger
 			{
@@ -44,6 +48,18 @@ public class BloggerDataService : IBloggerDataService
 				Nickname = "Descartes",
 				FullName = "Rene Descartes"
 			};
-		#endregion
+		*/
+	}
+
+	public bool IsDbExists()
+	{
+		using var db = new WinBloggerDbContext();
+		return db.Database.CanConnect();
+	}
+
+	public void CreateDatabase()
+	{
+		var dataMigrator = new DataMigrator();
+		dataMigrator.SeedDatabase();
 	}
 }

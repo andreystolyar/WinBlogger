@@ -6,4 +6,6 @@ namespace WinBlogger.UI.Data;
 public interface IBloggerDataService
 {
 	IEnumerable<Blogger> GetAll();
+	bool IsDbExists();
+	void CreateDatabase();
 }

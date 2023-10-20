@@ -5,7 +5,7 @@ namespace WinBlogger;
 
 public partial class MainWindow : Window
 {
-	MainViewModel _viewModel;
+  readonly MainViewModel _viewModel;
 
 	public MainWindow(MainViewModel viewModel)
 	{
@@ -17,6 +17,15 @@ public partial class MainWindow : Window
 
 	void MainWindow_Loaded(object sender, RoutedEventArgs e)
 	{
-		_viewModel.Load();
-	}
+    if (!_viewModel.CheckDb())
+		{
+			var message = "База данных не найдена, создать?";
+			var caption = "База данных не найдена";
+			var result = MessageBox.Show(message, caption, MessageBoxButton.YesNo);
+			if (result == MessageBoxResult.No) return;
+			_viewModel.CreateDb();
+		}
+
+    _viewModel.Load();
+  }
 }
