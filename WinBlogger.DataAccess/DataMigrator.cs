@@ -13,9 +13,8 @@ public class DataMigrator
   }
   */
 
-  public void SeedDatabase()
+  public static void SeedDatabase(WinBloggerDbContext db)
   {
-    using var db = new WinBloggerDbContext();
     db.Database.Migrate();
 
     SeedBloggers(db);
@@ -26,7 +25,7 @@ public class DataMigrator
     db.SaveChanges();
   }
 
-  void SeedBloggers(WinBloggerDbContext db)
+  static void SeedBloggers(WinBloggerDbContext db)
   {
     var bloggers = new List<Blogger>
     {

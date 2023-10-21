@@ -15,7 +15,7 @@ public partial class MainWindow : Window
 		Loaded += MainWindow_Loaded;
 	}
 
-	void MainWindow_Loaded(object sender, RoutedEventArgs e)
+	async void MainWindow_Loaded(object sender, RoutedEventArgs e)
 	{
     if (!_viewModel.CheckDb())
 		{
@@ -26,6 +26,6 @@ public partial class MainWindow : Window
 			_viewModel.CreateDb();
 		}
 
-    _viewModel.Load();
+    await _viewModel.LoadAsync();
   }
 }

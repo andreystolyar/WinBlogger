@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using WinBlogger.DataAccess;
 using WinBlogger.Model;
 
@@ -8,10 +10,17 @@ namespace WinBlogger.UI.Data;
 
 public class BloggerDataService : IBloggerDataService
 {
-	public IEnumerable<Blogger> GetAll()
+  readonly Func<WinBloggerDbContext> _contextCreator;
+
+  public BloggerDataService(Func<WinBloggerDbContext> contextCreator)
+  {
+		_contextCreator = contextCreator;
+  }
+
+  public async Task<List<Blogger>> GetAllAsync()
 	{
-		using var db = new WinBloggerDbContext();
-		return db.Bloggers.AsNoTracking().ToList();
+		using var db = _contextCreator();
+		return await db.Bloggers.AsNoTracking().ToListAsync();
 
 		/*
 		yield return
@@ -53,13 +62,13 @@ public class BloggerDataService : IBloggerDataService
 
 	public bool IsDbExists()
 	{
-		using var db = new WinBloggerDbContext();
+		using var db = _contextCreator();
 		return db.Database.CanConnect();
 	}
 
 	public void CreateDatabase()
 	{
-		var dataMigrator = new DataMigrator();
-		dataMigrator.SeedDatabase();
+		using var db = _contextCreator();
+		DataMigrator.SeedDatabase(db);
 	}
 }

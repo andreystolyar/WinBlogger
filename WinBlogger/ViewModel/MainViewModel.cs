@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using WinBlogger.Model;
 using WinBlogger.UI.Data;
 
@@ -15,9 +16,9 @@ public class MainViewModel : ViewModelBase
 		_bloggerDataService = bloggerDataService;
 	}
 
-	public void Load()
+	public async Task LoadAsync()
 	{
-		var bloggers = _bloggerDataService.GetAll();
+		var bloggers = await _bloggerDataService.GetAllAsync();
 
 		Authors.Clear();
 
