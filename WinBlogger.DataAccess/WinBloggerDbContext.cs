@@ -8,10 +8,12 @@ public class WinBloggerDbContext : DbContext
 {
 	IConfigurationRoot? _configuration;
 
-	public DbSet<Blogger> Bloggers { get; set; }
-	public DbSet<Blog> Blogs { get; set; }
+	public DbSet<Blogger> Bloggers	{ get; set; }
+	public DbSet<Blog>		Blogs			{ get; set; }
+	public DbSet<Post>		Posts			{ get; set; }
+	public DbSet<Comment> Comments	{ get; set; }
 
-	public WinBloggerDbContext() : base() { }
+	public WinBloggerDbContext() { }
 
 	// constructor for dependency injection
 	public WinBloggerDbContext(DbContextOptions options) : base(options) { }
@@ -34,11 +36,5 @@ public class WinBloggerDbContext : DbContext
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
-		/*
-		modelBuilder.Entity<Blog>()
-								.HasOne(a => a.Author)
-								.WithOne(a => a.Blog)
-                .HasForeignKey<Blogger>();
-		*/
   }
 }

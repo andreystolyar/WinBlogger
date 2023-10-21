@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using WinBlogger.Model;
 using WinBlogger.UI.Data;
 
@@ -6,7 +7,7 @@ namespace WinBlogger.UI.ViewModel;
 
 public class MainViewModel : ViewModelBase
 {
-	IBloggerDataService _bloggerDataService;
+  readonly IBloggerDataService _bloggerDataService;
 	Blogger? _selectedAuthor;
 
 	public MainViewModel(IBloggerDataService bloggerDataService)
@@ -15,9 +16,9 @@ public class MainViewModel : ViewModelBase
 		_bloggerDataService = bloggerDataService;
 	}
 
-	public void Load()
+	public async Task LoadAsync()
 	{
-		var bloggers = _bloggerDataService.GetAll();
+		var bloggers = await _bloggerDataService.GetAllAsync();
 
 		Authors.Clear();
 
@@ -25,17 +26,25 @@ public class MainViewModel : ViewModelBase
 			Authors.Add(blogger);
 	}
 
+	public bool CheckDb()
+	{
+		return _bloggerDataService.IsDbExists();
+	}
+
+	public void CreateDb()
+	{
+		_bloggerDataService.CreateDatabase();
+	}
+
 	public ObservableCollection<Blogger> Authors { get; set; }
 
-	public Blogger SelectedAuthor
+	public Blogger? SelectedAuthor
 	{
 		get { return _selectedAuthor; }
-
 		set
 		{
 			_selectedAuthor = value;
 			OnNotifyPropertyChanged();
 		}
 	}
-
 }

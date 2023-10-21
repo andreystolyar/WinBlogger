@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WinBlogger.DataAccess;
 
@@ -11,9 +12,11 @@ using WinBlogger.DataAccess;
 namespace WinBlogger.DataAccess.Migrations
 {
     [DbContext(typeof(WinBloggerDbContext))]
-    partial class WinBloggerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231019121135_Add_posts_and_comments_tables")]
+    partial class Add_posts_and_comments_tables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

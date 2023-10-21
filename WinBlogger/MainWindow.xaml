@@ -10,43 +10,42 @@
         Height="450"
         FontSize="20"
         mc:Ignorable="d">
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="200" />
-			<ColumnDefinition />
-		</Grid.ColumnDefinitions>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="200" />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
 
-		<ListView DisplayMemberPath="Nickname"
-		          ItemsSource="{Binding Authors}"
-		          SelectedItem="{Binding SelectedAuthor,
-		                                 Mode=TwoWay}" />
+    <ListView DisplayMemberPath="Nickname"
+              ItemsSource="{Binding Authors}"
+              SelectedItem="{Binding SelectedAuthor,
+                                     Mode=TwoWay}" />
 
-		<Grid Grid.Column="1">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition />
-			</Grid.RowDefinitions>
+    <Grid Grid.Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
 
-			<Label Margin="10,10,10,0"
-			       Content="Nickname" />
-			<TextBox Grid.Row="1"
-			         Margin="10,0,10,10"
-			         Text="{Binding SelectedAuthor.Nickname,
-			                        Mode=TwoWay,
-			                        UpdateSourceTrigger=PropertyChanged}" />
+      <Label Margin="10,10,10,0"
+             Content="Nickname" />
+      <TextBox Grid.Row="1"
+               Margin="10,0,10,10"
+               Text="{Binding SelectedAuthor.Nickname,
+                              Mode=TwoWay,
+                              UpdateSourceTrigger=PropertyChanged}" />
+      <Label Grid.Row="2"
+             Margin="10,0"
+             Content="Full Name" />
+      <TextBox Grid.Row="3"
+               Margin="10,0,10,10"
+               Text="{Binding SelectedAuthor.FullName,
+                              Mode=TwoWay,
+                              UpdateSourceTrigger=PropertyChanged}" />
+    </Grid>
 
-			<Label Grid.Row="2"
-			       Margin="10,0"
-			       Content="Full Name" />
-			<TextBox Grid.Row="3"
-			         Margin="10,0,10,10"
-			         Text="{Binding SelectedAuthor.FullName,
-			                        Mode=TwoWay,
-			                        UpdateSourceTrigger=PropertyChanged}" />
-		</Grid>
-
-	</Grid>
+  </Grid>
 </Window>

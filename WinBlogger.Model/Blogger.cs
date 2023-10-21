@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WinBlogger.Model;
 
@@ -12,4 +11,7 @@ public class Blogger : ModelBase
 	public string? FullName { get; set; }
 
 	public Blog? Blog { get; set; }
+
+	[StringLength(10)]
+	public string? Avatar { get; set; }
 }
