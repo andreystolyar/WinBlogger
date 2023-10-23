@@ -9,10 +9,30 @@
 
   <ItemGroup>
     <None Remove="appsettings.json" />
+    <None Remove="Images\Avatars\01_shopengauer.png" />
+    <None Remove="Images\Avatars\02_spinoza.png" />
+    <None Remove="Images\Avatars\03_nietzsche.png" />
+    <None Remove="Images\Avatars\04_kant.png" />
+    <None Remove="Images\Avatars\05_descartes.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Avatars\01_shopengauer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Avatars\02_spinoza.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Avatars\03_nietzsche.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Avatars\04_kant.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Avatars\05_descartes.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -28,10 +48,6 @@
   <ItemGroup>
     <ProjectReference Include="..\WinBlogger.DataAccess\WinBlogger.DataAccess.csproj" />
     <ProjectReference Include="..\WinBlogger.Model\WinBlogger.Model.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Images\Avatars\" />
   </ItemGroup>
 
 </Project>

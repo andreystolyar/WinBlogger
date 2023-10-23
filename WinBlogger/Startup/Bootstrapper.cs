@@ -12,6 +12,7 @@ public class Bootstrapper
 		var builder = new ContainerBuilder();
 
 		builder.RegisterType<WinBloggerDbContext>().AsSelf();
+		builder.RegisterType<DataMigrator>().As<IDataMigrator>();
 
 		builder.RegisterType<MainWindow>().AsSelf();
 		builder.RegisterType<MainViewModel>().AsSelf();

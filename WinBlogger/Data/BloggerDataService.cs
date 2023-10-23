@@ -11,10 +11,13 @@ namespace WinBlogger.UI.Data;
 public class BloggerDataService : IBloggerDataService
 {
   readonly Func<WinBloggerDbContext> _contextCreator;
+	readonly IDataMigrator _migrator;
 
-  public BloggerDataService(Func<WinBloggerDbContext> contextCreator)
+  public BloggerDataService
+		(Func<WinBloggerDbContext> contextCreator, IDataMigrator migrator)
   {
 		_contextCreator = contextCreator;
+		_migrator = migrator;
   }
 
   public async Task<List<Blogger>> GetAllAsync()
@@ -69,6 +72,6 @@ public class BloggerDataService : IBloggerDataService
 	public void CreateDatabase()
 	{
 		using var db = _contextCreator();
-		DataMigrator.SeedDatabase(db);
+		_migrator.SeedDatabase(db);
 	}
 }

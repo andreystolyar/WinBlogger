@@ -3,7 +3,7 @@ using WinBlogger.Model;
 
 namespace WinBlogger.DataAccess;
 
-public class DataMigrator
+public class DataMigrator : IDataMigrator
 {
   /*
   public void ApplyMigrations()
@@ -13,7 +13,7 @@ public class DataMigrator
   }
   */
 
-  public static void SeedDatabase(WinBloggerDbContext db)
+  public void SeedDatabase(WinBloggerDbContext db)
   {
     db.Database.Migrate();
 
