@@ -12,6 +12,6 @@ public class Blogger : ModelBase
 
 	public Blog? Blog { get; set; }
 
-	[StringLength(10)]
+	[StringLength(20)]
 	public string? Avatar { get; set; }
 }

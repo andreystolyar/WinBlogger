@@ -12,8 +12,8 @@ using WinBlogger.DataAccess;
 namespace WinBlogger.DataAccess.Migrations
 {
     [DbContext(typeof(WinBloggerDbContext))]
-    [Migration("20231019121135_Add_posts_and_comments_tables")]
-    partial class Add_posts_and_comments_tables
+    [Migration("20231024122916_AddPostsToBlog")]
+    partial class AddPostsToBlog
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,8 +62,8 @@ namespace WinBlogger.DataAccess.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Avatar")
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("FullName")
                         .HasMaxLength(100)
@@ -171,12 +171,17 @@ namespace WinBlogger.DataAccess.Migrations
             modelBuilder.Entity("WinBlogger.Model.Post", b =>
                 {
                     b.HasOne("WinBlogger.Model.Blog", "Blog")
-                        .WithMany()
+                        .WithMany("Posts")
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Blog");
+                });
+
+            modelBuilder.Entity("WinBlogger.Model.Blog", b =>
+                {
+                    b.Navigation("Posts");
                 });
 
             modelBuilder.Entity("WinBlogger.Model.Blogger", b =>

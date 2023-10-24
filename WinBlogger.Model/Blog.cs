@@ -15,4 +15,6 @@ public class Blog : ModelBase
 
   [ForeignKey(nameof(Blogger))]
   public int BloggerId { get; set; }
+
+  public List<Post>? Posts { get; set; }
 }
