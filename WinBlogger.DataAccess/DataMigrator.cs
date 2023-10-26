@@ -162,7 +162,7 @@ public class DataMigrator : IDataMigrator
         {
           Title = "Critique of pure reason",
 
-          Description = "",
+          Description = "Critique of Pure Reason, foundational study of the nature and scope of human reason as it relates to metaphysics and epistemology, by the German Enlightenment philosopher Immanuel Kant (1724–1804). The Kritik der reinen Vernunft (1781, 1787; first edition spelled Critik), or Critique of Pure Reason, was the first of Kant’s three so-called “critical” works—the other two being the Critik der practischen Vernunft (1788; Critique of Practical Reason), on ethics, and the Critik der Urteilskraft (1790; Critique of Judgment), on aesthetics—that together effected a lasting revolution in philosophical thought. For having reconceived the nature and methodology of philosophy in these works, Kant is widely regarded as the greatest philosopher of the modern period (the 17th century through the 19th century) and among the greatest philosophers of all time.",
 
           Posts = new List<Post>
           {
