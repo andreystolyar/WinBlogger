@@ -158,12 +158,87 @@ public class DataMigrator : IDataMigrator
         Nickname = "Kant",
         FullName = "Immanuel Kant",
         Avatar = "04_kant.png",
+        Blog = new Blog
+        {
+          Title = "Critique of pure reason",
+
+          Description = "",
+
+          Posts = new List<Post>
+          {
+            new Post
+            {
+              Title = "",
+              Text = "Thus I cannot even assume God, freedom, and immortality for the sake of the necessary practical use of my reason, if I do not at the same time deprive speculative reason of its pretensions to transcendental insight...I therefore had to annul knowledge in order to make room for faith.",
+              Created = DateTime.Now,
+            },
+            new Post
+            {
+              Title = "",
+              Text = "By means of outer sense (a property of our mind) we present objects as outside us, and present them on and all in space. \nThus everything belonging to our inner determinations is presented in relations of time.",
+              Created = DateTime.Now,
+            },
+            new Post {
+              Title = "Preface to CPR",
+              Text = "Metaphysics a wholly isolated speculative cognition (knowledge) of reason that elevates itself entirely above all instruction from experience, and that through mere concepts (not, like mathematics, through the application of concepts to intuition), where reason thus is supposed to be its own pupil - has up to now not been so favored by fate as to have been able to enter upon the secure course of a science, even though it is older than all other sciences, and would remain even if all the others were swallowed up by an all-consuming barbarism. For in it reason continuously gets stuck, even when it claims a priori insight (as it pretends) into those laws confirmed by the commonest experience. In metaphysics we have to retrace our path countless times, because we find that it does not lead where we want to go, and it is so far from reaching unanimity in the assertions of its adherents that it is rather a battlefield, and indeed one that appears to be especially determined for testing one's powers in mock combat; on this battlefield no combatant has ever gained the least bit of ground, nor has any been able to base any lasting possession on his victory. Hence there is no doubt that up to now the procedure of metaphysics has been a mere groping, and what is the worst, a groping among mere concepts. \nNow why is it that here the secure path of science still could not be found? Is it perhaps impossible? Why then has nature afflicted our reason with the restless striving for such a path, as if it were one of reason's most important occupations?  Still more, how little cause have we to place trust in our reason if in one of the most important parts of our desire for knowledge it does not merely forsake us but even entices us with delusions and in the end betrays us! Or if the path has merely eluded us so far, what indications may we use that might lead us to hope that in renewed attempts we will be luckier than those who have gone before us? \nI should think that the examples of mathematics and natural science, which have become what they now are through a revolution brought about all at once, were remarkable enough that we might reflect on the essential element in the change in the ways of thinking that has been so advantageous to them, and, at least as an experiment, imitate it insofar as their analogy with metaphysics, as rational cognition, might permit. Up to now it has been assumed that all our cognition must conform to the objects; but all attempts to find out something about them a priori through concepts that would extend our cognition have, on this presupposition, come to nothing. Hence let us once try whether we do not get farther with the problems of metaphysics by assuming that the objects must conform to our cognition, which would agree better with the requested possibility of an a priori cognition of them, which is to establish something about objects before they are given to us. This would be just like the first thoughts of Copernicus,,6 who, when he did not make good progress in the explanation of the celestial motions if he assumed that the entire celestial host revolves around the observer, tried to see if he might not have greater success if he made the observer revolve and left the stars at rest. Now in metaphysics we can try in a similar way regarding the intuition of objects. If intuition has to conform to the constitution of the objects, then I do not see how we can know anything of them a priori; but if the object (as an objectC of the senses) conforms to the constitution of our faculty of intuition, then I can very well represent this possibility to myself. Yet because I cannot stop with these intuitions, if they are to become cognitions, but must refer them as representations to something as their object and determine this object through them, I can assume either that the concepts through which I bring about this determination also conform to the objects, and then I am once again in the same difficulty about how I could know anything about them a priori, or else I assume that the objects, or what is the same thing, the experience in which alone they can be cognized (as given objects) conforms to those concepts, in which case I immediately see an easier way out of the difficulty, since experience itself is a kind of cognition requiring the understanding, whose rule I have to presuppose in myself before any object is given to me, hence a priori, which rule is expressed in concepts a priori, to which all objects of experience must therefore necessarily conform, and with which they must agree. As for objects insofar as they are thought merely through reason, and necessarily at that, but that (at least as reason thinks them) cannot be given in experience at all - the attempt to think them (for they must be capable of being thought) will provide a splendid touchstone of what we assume as the altered method of our way of thinking, namely that we can cognize of things a priori only what we ourselves have put into them.",
+              Created = DateTime.Now,
+            },
+            new Post {
+              Title = "",
+              Text = "What is the ground of the relation of that in us which we call representation to the object?",
+              Created = DateTime.Now,
+            },
+            new Post {
+              Title = "B xx",
+              Text = "Our rational cognition applies only to apperances, and leaves the thing in itself uncognized by us. even though inherently actual. For what necessarily impels us to go beyond the boundary of experience and of all apperances is the unconditioned that reason demands in things in themselves; reason necessarily an quite rightfully - demands this unconditioned for everything conditioned, thus demanding that the series of conditions be completed by means of that unconditioned.",
+              Created = DateTime.Now,
+            },
+          }
+        }
       },
       new Blogger
       {
         Nickname = "Descartes",
         FullName = "Rene Descartes",
         Avatar = "05_descartes.png",
+        Blog = new Blog
+        {
+          Title = "Descartes Quotes",
+          Description = "René Descartes was a scientist, philosopher, and mathematician who lived in Europe during the seventeenth century. Widely considered one of the leading intellectuals of the Dutch Golden Age, René Descartes was actually born in France, though he moved to the Dutch Republic after serving in the army. Among his many achievements, Descartes is known as the father of analytical geometry. His mathematical discovery created a bridge that allowed geometric problems to be solved using algebra. In the field of science, he helped introduce skepticism to the scientific method. And his philosophical ponderings are still studied by students today. ",
+          Posts = new List<Post>
+          {
+            new Post {
+              Title = "",
+              Text = "The very desire to seek the truth often causes people, who do not know how it should be sought correctly, to make judgments about things that they do not perceive and in that way they make mistakes.",
+              Created = DateTime.Now,
+            },
+            new Post {
+              Title = "",
+              Text = "Those who reason most powerfully and are the most successful at ordering their thoughts so as to make them clear and intelligible will always be best able to persuade others of what they say, even if they speak in the thickest of dialects.",
+              Created = DateTime.Now,
+            },
+            new Post {
+              Title = "",
+              Text = "It is easy to hate, and it is difficult to love. This is how the whole scheme of things works. All good things are difficult to achieve; and bad things are very easy to get.",
+              Created = DateTime.Now,
+            },
+            new Post {
+              Title = "",
+              Text = "By 'God', I understand, a substance which is infinite, independent, supremely intelligent, supremely powerful, and which created both myself and everything else that exists. All these attributes are such that, the more carefully I concentrate on them, the less possible it seems that they could have originated from me alone. So, from what has been said it must be concluded that God necessarily exists.",
+              Created = DateTime.Now,
+            },
+            new Post {
+              Title = "",
+              Text = "I doubt, therefore I think, therefore I am.",
+              Created = DateTime.Now,
+            },
+            new Post {
+              Title = "",
+              Text = "The reading of all good books is like conversation with the finest men of past centuries",
+              Created = DateTime.Now,
+            }
+          }
+        }
       }
     };
 
