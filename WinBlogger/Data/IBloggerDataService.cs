@@ -7,6 +7,6 @@ namespace WinBlogger.UI.Data;
 public interface IBloggerDataService
 {
 	Task<List<Blogger>> GetAllAsync();
-	bool IsDbExists();
-	void CreateDatabase();
+	Task<bool> IsDbExistsAsync();
+	Task CreateDatabaseAsync();
 }

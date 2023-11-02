@@ -13,19 +13,19 @@ public class DataMigrator : IDataMigrator
   }
   */
 
-  public void SeedDatabase(WinBloggerDbContext db)
+  public async Task SeedDatabaseAsync(WinBloggerDbContext db)
   {
-    db.Database.Migrate();
+    await db.Database.MigrateAsync();
 
-    SeedBloggers(db);
+    await SeedBloggers(db);
     //SeedBlogs(db);
     //SeedPosts(db);
     //SeedComments(db);
 
-    db.SaveChanges();
+    await db.SaveChangesAsync();
   }
 
-  static void SeedBloggers(WinBloggerDbContext db)
+  static async Task SeedBloggers(WinBloggerDbContext db)
   {
     //todo: add posts' titles and comments
     var bloggers = new List<Blogger>
@@ -242,7 +242,7 @@ public class DataMigrator : IDataMigrator
       }
     };
 
-    db.Bloggers.AddRange(bloggers);
+    await db.Bloggers.AddRangeAsync(bloggers);
   }
 
   void SeedBlogs(WinBloggerDbContext db)

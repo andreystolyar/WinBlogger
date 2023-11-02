@@ -2,5 +2,5 @@
 
 public interface IDataMigrator
 {
-  void SeedDatabase(WinBloggerDbContext db);
+  Task SeedDatabaseAsync(WinBloggerDbContext db);
 }

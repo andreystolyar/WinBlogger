@@ -63,15 +63,15 @@ public class BloggerDataService : IBloggerDataService
 		*/
 	}
 
-	public bool IsDbExists()
+	public async Task<bool> IsDbExistsAsync()
 	{
 		using var db = _contextCreator();
-		return db.Database.CanConnect();
+		return await db.Database.CanConnectAsync();
 	}
 
-	public void CreateDatabase()
+	public async Task CreateDatabaseAsync()
 	{
 		using var db = _contextCreator();
-		_migrator.SeedDatabase(db);
+		await _migrator.SeedDatabaseAsync(db);
 	}
 }

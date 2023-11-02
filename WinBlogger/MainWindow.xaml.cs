@@ -17,13 +17,13 @@ public partial class MainWindow : Window
 
 	async void MainWindow_Loaded(object sender, RoutedEventArgs e)
 	{
-    if (!_viewModel.CheckDb())
+    if (! await _viewModel.CheckDbAsync())
 		{
 			var message = "База данных не найдена, создать?";
 			var caption = "База данных не найдена";
 			var result = MessageBox.Show(message, caption, MessageBoxButton.YesNo);
 			if (result == MessageBoxResult.No) return;
-			_viewModel.CreateDb();
+			await _viewModel.CreateDbAsync();
 		}
 
     await _viewModel.LoadAsync();

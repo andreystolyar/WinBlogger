@@ -26,14 +26,14 @@ public class MainViewModel : ViewModelBase
 			Authors.Add(blogger);
 	}
 
-	public bool CheckDb()
+	public async Task<bool> CheckDbAsync()
 	{
-		return _bloggerDataService.IsDbExists();
+		return await _bloggerDataService.IsDbExistsAsync();
 	}
 
-	public void CreateDb()
+	public async Task CreateDbAsync()
 	{
-		_bloggerDataService.CreateDatabase();
+		await _bloggerDataService.CreateDatabaseAsync();
 	}
 
 	public ObservableCollection<Blogger> Authors { get; set; }
